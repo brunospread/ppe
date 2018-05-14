@@ -1,12 +1,14 @@
 package br.com.brb.ppe.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
-//@Configuration
-//@Profile("h2local")
+@Configuration
+@Profile("h2local")
 public class DatabaseConfigurationH2Local extends DatabaseConfiguration {
 
     @Bean(destroyMethod = "shutdown")

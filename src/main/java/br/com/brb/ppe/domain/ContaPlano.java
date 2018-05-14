@@ -1,9 +1,14 @@
 package br.com.brb.ppe.domain;
 
-// TODO verificar entidade
-public class ContaPlano extends Conta {
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-    private Long id;
+// TODO verificar entidade
+@Getter
+@Setter
+@NoArgsConstructor
+public class ContaPlano extends Conta {
 
     private Plano plano; // TODO: refatorar Plano para enum
 
