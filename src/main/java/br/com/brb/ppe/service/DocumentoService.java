@@ -1,15 +1,19 @@
 package br.com.brb.ppe.service;
 
+import br.com.brb.ppe.domain.dto.IdentificadorArquivoDTO;
+
+import java.util.Set;
+
 public interface DocumentoService {
 
     /**
      * TODO: implementar parâmetros
      */
 
-    void confirmarRecebimentoArquivo();
+    void confirmarRecebimentoArquivo(Set<IdentificadorArquivoDTO> listaIdentificadorArquivos);
 
-    void obterArquivo();
+    void obterArquivo(IdentificadorArquivoDTO identificadorArquivoDTO);
 
-    void obterDocumento();
+    void obterDocumento(String guidPedido);
 
 }
