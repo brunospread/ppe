@@ -1,0 +1,4 @@
+br\com\brb\ppe\application\impl\Stub.class
+br\com\brb\ppe\PPEApplication.class
+br\com\brb\ppe\domain\model\impl\Stub.class
+br\com\brb\ppe\interfaces\rest\StubResource.class

@@ -1,0 +1,151 @@
+spring:
+  profiles: default
+  application:
+    name: ppe
+  jta:
+    enabled: false
+  jpa:
+    generate-ddl: false
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.Oracle10gDialect
+management:
+  add-application-context-header: false
+endpoints:
+  health:
+    sensitive: true
+  shutdown:
+    enabled: false
+applicationProperties:
+  mail:
+    from: noreply@brb.com.br
+  cors:
+    allowed-origins: '*'
+    allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+    allowed-headers: Authorization, content-type
+    exposed-headers: X-Total-Count, X-Validation-Error
+    max-age: 1800
+  swagger:
+    title: API da aplicacao de referencia
+    description: Documentacao da API da Aplicacao de referencia
+    version: 1.0.0
+    termsOfServiceUrl: null
+    contact: gr.nuati@brb.com.br
+    license: null
+    licenseUrl: null
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
+sga:
+  sistema:
+    sigla: ARQ
+  dominio: brb.com.br
+  trancodes:
+    - name: LOGIN
+      code: 1001
+    - name: LOGOFF
+      code: 1002
+  hosts: DAP340218
+  ports: 3030
+  timeout: 50000
+  limiteMaxCon: 10
+  timeoutPool: 15000
+  mantemConexao: true
+authorization:
+  activeDirectoryDomain: brb.com.br
+  activeDirectoryUrl: ldap://brb.com.br
+  timeout:
+    refreshToken: 360
+    token: 120
+servicos:
+  cliente: http://localhost:8081/clientes
+jms:
+  novocliente:
+    jndiNameDestination: ExemploModule!FundoInvestimentoCriadoQueue
+    jndiNameConnectionFactory: jms/ExemploFactory
+    concurrency: 1-5
+  novoFundoInvestimento:
+    jndiNameConnectionFactory: jms/ExemploFactory
+    jndiNameDestination: ExemploModule!NovoFundoInvestimentoTopic
+    concurrency: 1-5
+    subscription: Applicacao_referencia      
+quartz:
+  scheduler:
+    instanceId: AUTO
+    instanceName: ${spring.application.name}
+    makeSchedulerThreadDaemon: true
+    interruptJobsOnShutdown: true
+  jobStore:
+    clusterCheckinInterval: 20000
+    driverDelegateClass: "org.quartz.impl.jdbcjobstore.oracle.weblogic.WebLogicOracleDelegate"
+    acquireTriggersWithinLock: true
+    isClustered: true
+    misfireThreshold: 60000
+    tablePrefix: ${spring.jpa.properties.hibernate.default_schema}.QRTZ_
+    useProperties: false
+  threadPool:
+    threadCount: 5
+    makeThreadsDaemons: true
+---  
+spring:
+  profiles: weblogic
+  mail:
+    jndi-name: mail/default
+  datasource:
+    jndi-name: java/AplicacaoDS
+  cache:
+    jcache:
+      provider: com.tangosol.coherence.jcache.CoherenceBasedCachingProvider
+---
+spring:
+  profiles: autoContido
+  #mail:
+  #  host: localhost
+  #  port: 25
+  datasource:
+    url: jdbc:oracle:thin:@hbd340202.brb.com.br:1521/dep1d.brb.com.br
+    username: USR_ARQ
+    password: ENC(RYPEG6bfJukrBSU3jkDTpw==)
+    driver-class-name: oracle.jdbc.OracleDriver
+    tomcat:
+      initial-size: 1
+      max-active: 1
+      max-idle: 1
+      test-on-borrow: true
+      validation-query: select 1 from dual    
+  #jta:
+  #  atomikos:
+  #    properties:
+  #      max-timeout: 10000
+  #    datasource:       
+  #      max-pool-size: 10
+  #      min-pool-size: 5
+  #      max-life-time: 20000
+  #      borrow-connection-timeout: 10000
+  #      test-query: select 1 from dual
+  #      xa-data-source-class-name: oracle.jdbc.xa.client.OracleXADataSource
+  #      xa-properties:
+  #        user: USR_ARQ
+  #        password: ENC(RYPEG6bfJukrBSU3jkDTpw==)
+  #        URL: jdbc:oracle:thin:@hbd340202.brb.com.br:1521/dep1d.brb.com.br
+jms:
+  novocliente:
+    javaNamingFactoryInitial: weblogic.jndi.WLInitialContextFactory
+    javaNamingProviderUrl: t3://localhost:7001
+  novoFundoInvestimento:
+    javaNamingFactoryInitial: weblogic.jndi.WLInitialContextFactory
+    javaNamingProviderUrl: t3://localhost:7001
+---
+spring:
+  profiles: h2local
+  jpa:
+    hibernate:
+      hbm2ddl:
+        auto: create-drop
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=Oracle

@@ -1,0 +1,15 @@
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+ version="2.1">
+
+ <!--<named-query name="RentabilidadeMensal.recuperarHistoricoPorFundo">-->
+  <!--<query><![CDATA[select new br.com.brb.ppe.domain.model.fundoinvestimento.RentabilidadeMensalHistoricoVO(r.anoReferencia, r.mesReferencia, r.valor) from RentabilidadeMensal r where r.fundoInvestimento = :fundo order by r.anoReferencia, r.mesReferencia]]></query>-->
+ <!--</named-query>-->
+
+ <!--<named-query name="RentabilidadeMensal.recuperarHistoricoPorFundoAno">-->
+  <!--<query><![CDATA[select new br.com.brb.ppe.domain.model.fundoinvestimento.RentabilidadeMensalHistoricoVO(r.anoReferencia, r.mesReferencia, r.valor) from RentabilidadeMensal r where r.fundoInvestimento = :fundo and r.anoReferencia = :anoReferencia order by r.anoReferencia, r.mesReferencia]]></query>-->
+ <!--</named-query>-->
+
+
+</entity-mappings>

@@ -1,0 +1,12 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "br.com.brb.ppe.config.JtaDatabaseConfigurationStandalone",
+      "name": "spring.jta.atomikos.datasource",
+      "sourceMethod": "datasource()",
+      "type": "javax.sql.DataSource"
+    }
+  ],
+  "properties": []
+}

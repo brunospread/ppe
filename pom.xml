@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<artifactId>ppe</artifactId>
+	<name>PPE</name>
+	<description>Portal de Planos Econômicos</description>
+	<packaging>${packaging.type}</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<parent>
+		<groupId>br.com.brb</groupId>
+		<artifactId>brb-framework-parent</artifactId>
+		<relativePath></relativePath>
+		<version>2.9.0</version>
+	</parent>
+
+	<properties>
+		<coherence.version>12.2.1.0.0</coherence.version>
+		<wlthint3client.version>12.2.1.1.0</wlthint3client.version>
+		<wljmsclient.version>12.2.1.1.0</wljmsclient.version>
+		<jaxb-java-time-adapters.version>1.1.3</jaxb-java-time-adapters.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-batch</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
+		<!-- 
+			O spring-boot-devtools pode ser utilizado para a realizacao de hot deploy 
+			durante o desenvolvimento caso a aplicacao esteja sendo executada em modo
+			autocontido.
+			
+			Importante: Como o devtools adiciona mais um classloader, podem ocorrer problemas
+			com serializacao de objetos. 
+			
+			Cabe ao desenvolvedor avaliar e decidir se fara uso ou nao do recurso.
+		 -->
+		<!-- dependency> 
+			<groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-devtools</artifactId> 
+		</dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-groovy-templates</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jta-atomikos</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-web-rest</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>hibernate-jpa-2.0-api</artifactId>
+					<groupId>org.hibernate.javax.persistence</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-jasperreports</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-autenticacao-oauth-ad-sga</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-jms</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-quartz</artifactId>
+		</dependency>
+		
+
+		<dependency>
+			<groupId>javax.cache</groupId>
+			<artifactId>cache-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.0</version>
+		</dependency>
+
+
+		<!-- Dependencias necessarias para utilizacao de JMS. -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
+		</dependency>
+
+		
+		<dependency>
+		    <groupId>com.migesok</groupId>
+		    <artifactId>jaxb-java-time-adapters</artifactId>
+		    <version>${jaxb-java-time-adapters.version}</version>
+		</dependency>		
+
+
+		<!--  Dependencias do weblogic para uso de jms -->
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+			<artifactId>wlthint3client</artifactId>
+			<version>${wlthint3client.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.weblogic</groupId>
+			<artifactId>wljmsclient</artifactId>
+			<version>${wljmsclient.version}</version>
+		</dependency>
+		
+		<!-- Dependencias especificas para a execucao de testes -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.brb</groupId>
+			<artifactId>brb-framework-jasperreports</artifactId>
+			<type>test-jar</type>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<scope>test</scope>
+		</dependency>		
+		
+
+	</dependencies>
+
+
+	<profiles>
+		<profile>
+
+			<!-- Profile para gerenciamento das dependencias especificas para a execucao 
+				da aplicacao em modo autoContido (com o container de servlet embutido). O 
+				container usado e o undertow. Nesse modo e utilizado como mecanismo de cache 
+				o ehcache. Que pode ser substituido por outro mecanismo com a autorizacao 
+				do NUATI. E necessario definir uma variavel de ambiente com o nome jasypt.encryptor.password. 
+				Ela deve ser configurada com a chave de criptografia a usada para a protecao 
+				das senhas de banco de dados dos datasources. Pode ser passado tambem como 
+				um parametro para a JVM. A geracao das senhas encriptadas de ser feita com 
+				o utilitario encrypt.bat que no ambiente padrao de desenvolvimento esta armazenado 
+				na pasta: C:\IDE\Java\eclipse\jasypt-1.9.2\bin\ Exemplo de uso: encrypt.bat 
+				input="USR_ARQ" password=BRBdesenvolvimento2016 -->
+			<id>autoContido</id>
+			<properties>
+				<packaging.type>jar</packaging.type>
+				<quartz.driverDelegateClass>org.quartz.impl.jdbcjobstore.oracle.OracleDelegate</quartz.driverDelegateClass>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-undertow</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-jta-atomikos</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>com.github.ulisesbocchio</groupId>
+					<artifactId>jasypt-spring-boot-starter</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>net.sf.ehcache</groupId>
+					<artifactId>ehcache</artifactId>
+				</dependency>
+
+
+				<dependency>
+					<groupId>com.oracle</groupId>
+					<artifactId>ojdbc6</artifactId>
+					<version>11.2.0.2.0</version>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>weblogic</id>
+			<properties>
+				<packaging.type>war</packaging.type>
+				<quartz.driverDelegateClass>org.quartz.impl.jdbcjobstore.oracle.weblogic.WebLogicOracleDelegate</quartz.driverDelegateClass>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>com.oracle</groupId>
+					<artifactId>coherence</artifactId>
+					<version>${coherence.version}</version>
+				</dependency>
+
+				<dependency>
+					<groupId>com.oracle</groupId>
+					<artifactId>coherence-jcache</artifactId>
+					<version>${coherence.version}</version>
+				</dependency>
+
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<scope>provided</scope>
+				</dependency>
+
+			</dependencies>
+		</profile>
+
+	</profiles>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>2.9</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>com.oracle.weblogic</groupId>
+				<artifactId>weblogic-maven-plugin</artifactId>
+				<version>12.1.2-0-0</version>
+				<inherited>true</inherited>
+				<configuration>
+					<user>weblogic</user>
+					<password>BRB@123456</password>
+					<source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+					<name>${project.build.finalName}</name>
+					<targets>AdminServer</targets>
+				</configuration>
+			</plugin>
+
+			<!-- Plugin para executar testes com o SOAPUI. -->
+			<plugin>
+				<groupId>com.smartbear.soapui</groupId>
+				<artifactId>soapui-maven-plugin</artifactId>
+				<version>5.1.3</version>
+				<!-- Adicione aqui dependências, como, por exemplo, conexões com o banco 
+					de dados feitas diretamente no projeto do SOAPUI via scripts groovy precisam 
+					do driver jodbc -->
+				<!-- dependencies> <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc6</artifactId> 
+					<version>11.2.0.2.0</version> </dependency> </dependencies -->
+				<configuration>
+					<!-- settingsFile>src/test/resources/soapui-settings.xml</settingsFile -->
+					<projectFile>src/test/resources/REST-Appreferencia-soapui-project.xml</projectFile>
+					<exportAll>true</exportAll>
+					<printReport>true</printReport>
+					<junitReport>true</junitReport>
+					<outputFolder>${project.basedir}/target/surefire-reports</outputFolder>
+					<!-- Propriedades que são passadas para o projeto do SOAPUI -->
+					<!--projectProperties> <value>username=u999999</value> </projectProperties -->
+				</configuration>
+			</plugin>
+
+			<!-- Plugin utilizado para a compilacao de relatorios do jasper -->
+			<plugin>
+				<groupId>com.alexnederlof</groupId>
+				<artifactId>jasperreports-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.alexnederlof
+										</groupId>
+										<artifactId>
+											jasperreports-plugin
+										</artifactId>
+										<versionRange>
+											[2.3,)
+										</versionRange>
+										<goals>
+											<goal>jasper</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<distributionManagement>
+		<site>
+			<id>nexus</id>
+			<url>dav:https://mavenrepository.brb.com.br/nexus/content/sites/brb/reports/appreferencia</url>
+		</site>
+		<repository>
+			<id>nexus</id>
+			<url>https://mavenrepository.brb.com.br/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>https://mavenrepository.brb.com.br/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:svn:https://svn.brb.com.br/svn/ARQ/DSV/Construcao/Fontes/brb-framework-2/backend/trunk/appreferencia</connection>
+		<developerConnection>scm:svn:https://svn.brb.com.br/svn/ARQ/DSV/Construcao/Fontes/brb-framework-2/backend/trunk/appreferencia</developerConnection>
+	</scm>
+
+</project>

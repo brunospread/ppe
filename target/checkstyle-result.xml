@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.14.1">
+<file name="D:\projetos\PPE\backend\construcao\branches\DVN_PPE1.0\src\main\java\br\com\brb\ppe\application\impl\Stub.java">
+</file>
+<file name="D:\projetos\PPE\backend\construcao\branches\DVN_PPE1.0\src\main\java\br\com\brb\ppe\domain\model\impl\Stub.java">
+</file>
+<file name="D:\projetos\PPE\backend\construcao\branches\DVN_PPE1.0\src\main\java\br\com\brb\ppe\interfaces\rest\StubResource.java">
+</file>
+<file name="D:\projetos\PPE\backend\construcao\branches\DVN_PPE1.0\src\main\java\br\com\brb\ppe\PPEApplication.java">
+</file>
+</checkstyle>

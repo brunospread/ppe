@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<FindBugsFilter>
+    <!--Match>
+        <Method name="clone" />
+        <Bug pattern="CN_IDIOM_NO_SUPER_CALL" />
+    </Match-->
+    <Match>
+        <Class name="~.*\.*_"/>
+        <Bug code="UuF"/>
+    </Match>
+
+    <!--Match>
+        <Bug code="NOISE"/>
+    </Match>
+    <Match>
+        <Bug code="TEST"/>
+    </Match>
+    <Match>
+        <Bug pattern="IMA_INEFFICIENT_MEMBER_ACCESS"/>
+    </Match>
+    <Match>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+    <Match>
+        <Bug pattern="RV_RETURN_VALUE_IGNORED2"/>
+    </Match-->
+    <Match>
+        <Class name="~.*\.dto\..*"/>
+        <Bug code="EI, EI2, MS"/>
+    </Match>
+</FindBugsFilter>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/AbstractDatabaseConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/ApplicationBasicConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/ApplicationConfigConstants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/AtomikosJtaPlatform.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/DatabaseConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/DatabaseConfigurationH2Local.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/DatabaseConfigurationStandalone.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/JtaDatabaseConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/JtaDatabaseConfigurationStandalone.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/JtaTransactionConfigurationStandalone.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/OAuth2ServerConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/QuartzConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/SecurityConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/SpringBatchConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/WebConfiguration.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/br/com/brb/ppe/config/package-info.java" charset="UTF-8" />
+  </component>
+</project>
